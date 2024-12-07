@@ -10,3 +10,5 @@ imbalanced-learn
 joblib
 underthesea
 nltk
+google.colab
+pyngrok
