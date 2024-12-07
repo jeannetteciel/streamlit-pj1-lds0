@@ -266,9 +266,9 @@ Original file is located at
 #     else:
 #       st.write(f"Không tìm thấy sản phẩm với ID: {st.session_state.selected_ma_san_pham}")
 
-from pyngrok import ngrok
+#from pyngrok import ngrok
 
-ngrok.set_auth_token('2psCD4VnJm8nJhtP8JlNYTSXz6r_4PQRHWsfbfpt7BNpXeiv8')
+#ngrok.set_auth_token('2psCD4VnJm8nJhtP8JlNYTSXz6r_4PQRHWsfbfpt7BNpXeiv8')
 
 # # Start Streamlit server on a specific port
 # !nohup streamlit run app.py --server.port 8501 &
