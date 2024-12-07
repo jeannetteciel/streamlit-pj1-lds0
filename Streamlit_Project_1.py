@@ -280,7 +280,3 @@ ngrok.set_auth_token('2psCD4VnJm8nJhtP8JlNYTSXz6r_4PQRHWsfbfpt7BNpXeiv8')
 # print(' * Tunnel URL:', ngrok_tunnel.public_url)
 
 # ngrok.kill()
-
-#!pip install pipreqs
-
-pip freeze > /content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/GUI/requirements.txt
