@@ -13,9 +13,9 @@ Original file is located at
 
 #!pip install underthesea
 
-from google.colab import drive
+#from google.colab import drive
 
-drive.mount('/content/drive')
+#drive.mount('/content/drive')
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
