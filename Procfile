@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run streamlit - Project 1.ipynb
