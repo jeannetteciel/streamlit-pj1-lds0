@@ -7,11 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/1lULKspxqZU3BQ5kaCagQ3hBX_MR3yl6x
 """
 
-!pip3 install streamlit
+#!pip3 install streamlit
 
-!pip3 install pyngrok
+#!pip3 install pyngrok
 
-!pip install underthesea
+#!pip install underthesea
 
 from google.colab import drive
 
@@ -281,10 +281,7 @@ print(' * Tunnel URL:', ngrok_tunnel.public_url)
 
 # ngrok.kill()
 
-from google.colab import files
-files.download('/content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/GUI/Streamlit - Project 1.ipynb')
-
-!pip install pipreqs
+#!pip install pipreqs
 
 pip freeze > /content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/GUI/requirements.txt
 
