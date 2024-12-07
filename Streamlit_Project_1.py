@@ -270,19 +270,17 @@ from pyngrok import ngrok
 
 ngrok.set_auth_token('2psCD4VnJm8nJhtP8JlNYTSXz6r_4PQRHWsfbfpt7BNpXeiv8')
 
-# Start Streamlit server on a specific port
-!nohup streamlit run app.py --server.port 8501 &
+# # Start Streamlit server on a specific port
+# !nohup streamlit run app.py --server.port 8501 &
 
-# Start ngrok tunnel to expose the Streamlit server
-ngrok_tunnel = ngrok.connect(addr='8501', proto='http', bind_tls=True)
+# # Start ngrok tunnel to expose the Streamlit server
+# ngrok_tunnel = ngrok.connect(addr='8501', proto='http', bind_tls=True)
 
-# print the URL of the ngrok tunnel
-print(' * Tunnel URL:', ngrok_tunnel.public_url)
+# # print the URL of the ngrok tunnel
+# print(' * Tunnel URL:', ngrok_tunnel.public_url)
 
 # ngrok.kill()
 
 #!pip install pipreqs
 
 pip freeze > /content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/GUI/requirements.txt
-
-! pip install -r requirements.txt
