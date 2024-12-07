@@ -11,4 +11,3 @@ joblib
 underthesea==1.3.3
 pyvi
 nltk
-google.colab
