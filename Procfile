@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run streamlit - Project 1.ipynb
+web: sh setup.sh && streamlit run Streamlit_Project_1.py
