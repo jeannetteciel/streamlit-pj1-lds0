@@ -42,7 +42,7 @@ drive.mount('/content/drive')
 # from underthesea import sent_tokenize, word_tokenize
 # from nltk.probability import FreqDist
 # 
-# df = pd.read_csv('/content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/Project 1/data_for_model.csv')
+# df = pd.read_csv('data_for_model.csv')
 # 
 # ### For New Prediction
 # # Chuyển nội dung về chữ thường trước khi remove duplicate
@@ -64,8 +64,8 @@ drive.mount('/content/drive')
 # 
 # rp =classification_report(y_test, result)
 # 
-# joblib.dump(model, '/content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/Project 1/logisticregression.joblib')
-# loaded_model = joblib.load('/content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/GUI/logisticregression.joblib')
+# joblib.dump(model, 'logisticregression.joblib')
+# loaded_model = joblib.load('logisticregression.joblib')
 # 
 # ###
 # 
@@ -83,7 +83,7 @@ drive.mount('/content/drive')
 # 
 # # Tạo set các stopwords:
 # stopwords = set()
-# f = open(r'/content/drive/MyDrive/LDS0_K292_Online_TruongThanhTuyen/Project 1/files/vietnamese-stopwords.txt', "r", encoding='utf-8')
+# f = open(r'vietnamese-stopwords.txt', "r", encoding='utf-8')
 # for line in f:
 #     word = f.readline()
 #     stopwords.add(word.replace('\n',''))
@@ -94,14 +94,14 @@ drive.mount('/content/drive')
 # for word in list_of_words:
 #     stopwords.add(word)
 # 
-# pos = pd.read_csv('/content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/Project 1/positive_words.csv')
+# pos = pd.read_csv('positive_words.csv')
 # positive_words = pos['positive_words'].to_list()
 # positive_words_u = []
 # for i in positive_words:
 #   a = i.replace(" ", "_")
 #   positive_words_u = positive_words_u + [a]
 # 
-# neg = pd.read_csv('/content/drive/MyDrive/DL07_K299_HaThuyAn_TruongThanhTuyen/DL07_K299_TruongThanhTuyen/Project 1/negative_words.csv')
+# neg = pd.read_csv('negative_words.csv')
 # negative_words = neg['negative_words'].to_list()
 # negative_words_u = []
 # for i in negative_words:
