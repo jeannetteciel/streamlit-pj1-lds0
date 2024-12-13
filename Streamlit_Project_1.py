@@ -1,16 +1,4 @@
 
-
-#!pip3 install streamlit
-
-#!pip3 install pyngrok
-
-#!pip install underthesea
-
-#from google.colab import drive
-
-#drive.mount('/content/drive')
-
-# Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 import streamlit as st
 import pandas as pd
@@ -83,7 +71,7 @@ for line in f:
 f.close()
 
 list_of_words = ['và', 'một', 'của', 'có', 'đó', 'rất', 'nào', 'được',
-                'khi', 'thể', 'sự', 'tính', 'trong','cũng','cùng','cho','hay','chỉ', 'hasaki', 'cực', 'ghế']
+                'khi', 'thể', 'sự', 'tính', 'trong','cũng','cùng','cho','hay','chỉ', 'hasaki', 'cực', 'ghế','mặt']
 for word in list_of_words:
     stopwords.add(word)
 
@@ -131,10 +119,11 @@ def cmt_extract (df, comment_column):
 
 
 # App Design
-st.title('GUI Đề án tốt nghiệp DS')
-st.subheader('Project 1 - Sentiment Analysis')
+###### Giao diện Streamlit ######
+st.image('hasakibanner.png', use_container_width=True)
+st.title('Project 1 - Hasaki Sentiment Analysis')
 
-menu = ['New Prediction', 'Product Analysis']
+menu = ['Project Executive', 'New Prediction', 'Product Analysis']
 choice = st.sidebar.selectbox('Menu', menu)
 st.sidebar.write("""#### Thành viên thực hiện:
                  Hà Thúy An & Trương Thanh Tuyền""")
@@ -142,7 +131,29 @@ st.sidebar.write("""#### Giảng viên hướng dẫn:
                 (Cô) Khuất Thùy Phương""")
 st.sidebar.write("""#### Thời gian thực hiện: 12/2024""")
 
-if choice == 'New Prediction':
+if choice == 'Project Executive':
+  st.subheader("Overal description of customers' feedback on Hasaki skincare products")
+  st.write('Research is conducted on ', len(df['noi_dung_binh_luan']), ' comments covering ', len(df['ma_san_pham'].unique()), ' products.')
+  st.write('## Product Average Rating')
+  st.write('Most of product averagely score over 4-star, showing that Hasaki is providing reliable and standard-meeting products')
+  st.image('rating_outliers.png', use_container_width=True)
+  st.write('## Comment Analysis')
+  st.write('### Rating Distribution')
+  st.write(format(len(df[df['so_sao'] == 5]['so_sao'])/len(df['so_sao']), '.0%'), ' rating is 5-star showing overall positive feedback on our products.')
+  st.image('rating_distribution.png', use_container_width=True)
+  st.write("### Positive ratio in comments' word")
+  st.write('There is positive correlation in positive ratio in comments and rating. Furthermore, higher rating less fluctuation shows that people often have a mix of positive and negative words even in low-rating comments.')
+  st.image('positive_ratio.png', use_container_width=True)
+  st.code(df.groupby('so_sao')[['positive_ratio']].mean())
+  st.write('Follow up above statistics, for feedback with 4-star, about or under 50% words are negative reviews. Thus, we decided to count all 4-star and below as negative and only 5-star reviews are positive, with the purpose of addressing every flaws and providing the best service.')
+  st.write("### Most common words in positive comments")
+  st.image('positive.png', use_container_width=True) 
+  st.write("### Most common words in negative comments") 
+  st.image('negative.png', use_container_width=True)  
+  st.write('## Classification Report')
+  st.write('The model is build by logistic regression with below result:')
+  st.code(rp)
+elif choice == 'New Prediction':
   st.subheader('Apply Logistic Regression Model to predict a new comment negative or positive')
   st.write(" Input or Load new comments")
   flag = False
@@ -209,11 +220,12 @@ elif choice == 'Product Analysis':
     product_data = df[df['ma_san_pham'] == product_code]
 
     st.write(product_data[['ma_san_pham', 'ten_san_pham', 'diem_trung_binh', 'gia_ban', 'gia_goc', 'phan_loai'
-                           , 'ma_khach_hang', 'noi_dung_binh_luan', 'ngay_binh_luan', 'so_sao', 'rating_group']].rename(columns = {'ma_san_pham':'Mã sản phẩm', 'ten_san_pham':'Tên sản phẩm'
-                                            ,'diem_trung_binh':'Điểm trung bình', 'gia_ban':'Giá bán'
-                                            , 'gia_goc':'Giá gốc', 'phan_loai':'Phân loại'
-                           , 'ma_khach_hang':'Mã khách hàng', 'noi_dung_binh_luan':'Nội dung bình luận'
-                           , 'ngay_binh_luan':'Ngày bình luận', 'so_sao':'Rating', 'rating_group':'Phân loại đánh giá'}))
+                            , 'ma_khach_hang', 'noi_dung_binh_luan', 'ngay_binh_luan', 'so_sao', 'rating_group']]
+                            .rename(columns = {'ma_san_pham':'Mã sản phẩm', 'ten_san_pham':'Tên sản phẩm'
+                            ,'diem_trung_binh':'Điểm trung bình', 'gia_ban':'Giá bán'
+                            , 'gia_goc':'Giá gốc', 'phan_loai':'Phân loại'
+                            , 'ma_khach_hang':'Mã khách hàng', 'noi_dung_binh_luan':'Nội dung bình luận'
+                            , 'ngay_binh_luan':'Ngày bình luận', 'so_sao':'Rating', 'rating_group':'Phân loại đánh giá'}))
     
     all_words, positive_list, negative_list = cmt_extract(product_data, 'processed_cmt')
 

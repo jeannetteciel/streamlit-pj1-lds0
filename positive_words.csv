@@ -2,208 +2,170 @@
 0,thích
 1,tốt
 2,xuất sắc
-3,tuyệt vời
-4,ổn
-5,hài lòng
-6,ưng ý
-7,hoàn hảo
-8,chất lượng
-9,nhanh
-10,tiện lợi
-11,dễ sử dụng
-12,hiệu quả
-13,ấn tượng
-14,nổi bật
-15,thân thiện
-16,dễ dàng
-17,thoải mái
-18,cao cấp
-19,độc đáo
-20,rất tốt
-21,rất thích
-22,tận tâm
-23,đáng tin cậy
-24,đẳng cấp
-25,hấp dẫn
-26,an tâm
-27,thúc đẩy
-28,cảm động
-29,phục vụ tốt
-30,làm hài lòng
-31,gây ấn tượng
-32,nổi trội
-33,sáng tạo
-34,phù hợp
-35,tận tâm
-36,hiếm có
-37,cải thiện
-38,hoà nhã
-39,chăm chỉ
-40,cẩn thận
-41,vui vẻ
-42,sáng sủa
-43,hào hứng
-44,đam mê
-45,vừa vặn
-46,đáng tiền
+3,ổn
+4,hài lòng
+5,chất lượng
+6,nhanh
+7,dễ dàng
+8,cao cấp
+9,rất tốt
+10,rất thích
+11,an tâm
+12,thúc đẩy
+13,cảm động
+14,phục vụ tốt
+15,làm hài lòng
+16,gây ấn tượng
+17,nổi trội
+18,sáng tạo
+19,phù hợp
+20,tận tâm
+21,hiếm có
+22,cải thiện
+23,hoà nhã
+24,chăm chỉ
+25,cẩn thận
+26,vui vẻ
+27,sáng sủa
+28,hào hứng
+29,đam mê
+30,vừa vặn
+31,đáng tiền
+32,tuyệt đẹp
+33,ấn tượng
+34,đáng kinh ngạc
+35,phi thường
+36,mê hoặc
+37,lãng mạn
+38,dễ sử dụng
+39,uy tín
+40,nhanh chóng
+41,tức thì
+42,rõ rệt
+43,đáng kể
+44,bền vững
+45,lâu dài
+46,tối ưu
 47,hoàn hảo
-48,tuyệt đẹp
-49,tuyệt vời
-50,ấn tượng
-51,đáng kinh ngạc
-52,phi thường
-53,độc đáo
-54,đáng yêu
-55,quyến rũ
-56,lôi cuốn
-57,hấp dẫn
-58,mê hoặc
-59,lãng mạn
-60,sang trọng
-61,thanh lịch
-62,dễ sử dụng
-63,uy tín
-64,nhanh chóng
-65,tức thì
-66,rõ rệt
-67,đáng kể
-68,bền vững
-69,lâu dài
-70,tối ưu
-71,hoàn hảo
-72,chuyên nghiệp
-73,đáng tin cậy
-74,an toàn
-75,lành tính
-76,thân thiện
-77,mềm mại
-78,dịu nhẹ
-79,sảng khoái
-80,tươi mát
-81,thoải mái
-82,thư giãn
-83,mượt mà
-84,đầy đặn
-85,căng bóng
-86,rạng rỡ
-87,tươi trẻ
-88,trẻ trung
-89,sáng khỏe
-90,min mặc
-91,không tì vết
-92,tỏa sáng
-93,hấp dẫn
-94,quyến rũ
-95,tự tin
-96,hạnh phúc
-97,thơm ngát
-98,quyến rũ
-99,hấp dẫn
-100,dịu nhẹ
-101,thoang thoảng
-102,sang trọng
-103,tinh tế
-104,tươi mát
-105,mát lạnh
-106,ấm áp
-107,mềm mịn
-108,mượt mà
-109,dễ chịu
-110,thoáng mát
-111,không nhờn rít
-112,nhẹ nhàng
-113,tơi xốp
-114,đầy đặn
-115,bổ dưỡng
-116,ẩm
-117,tươi sáng
-118,rực rỡ
-119,tráng lệ
-120,thanh lịch
-121,tinh tế
-122,tự nhiên
-123,nổi bật
-124,quyến rũ
-125,sang trọng
-126,hiện đại
-127,độc đáo
-128,tinh tế
-129,bền đẹp
-130,tiện lợi
-131,sạch
-132,sạch mụn
-133,mịn màng
-134,rẻ
-135,phải chăng
-136,hợp lý
-137,tiết kiệm
-138,đáng giá
-139,giá trị cao
-140,phải chăng
-141,ưu đãi
-142,cạnh tranh
-143,khuyến mãi tốt
-144,đặc trị
-145,chuyên sâu
-146,toàn diện
-147,đa năng
-148,hiệu quả cao
-149,tối ưu hóa
-150,phục hồi
-151,chống lão hóa
-152,làm dịu
-153,cấp nước
-154,dưỡng ẩm tốt
-155,làm sáng da
-156,bảo vệ da
-157,tái tạo da
-158,se khít lỗ chân lông
-159,làm sạch sâu
-160,ngăn ngừa mụn
-161,giữ màu lâu
-162,hồi sinh da
-163,nhỏ gọn
-164,tiện dụng
-165,đa năng
-166,dễ mang theo
-167,gọn nhẹ
-168,không chiếm diện tích
-169,thích hợp khi du lịch
-170,dễ bảo quản
-171,đóng gói tốt
-172,phù hợp với mọi hoàn cảnh
-173,về trải nghiệm tổng thể:
-174,tinh tế
-175,sang chảnh
-176,đáng yêu
-177,thoải mái
-178,lịch sự
-179,đẳng cấp
-180,hài hòa
-181,vượt mong đợi
-182,trọn vẹn
-183,hòa quyện
-184,cảm giác dễ chịu
-185,lôi cuốn
-186,cảm giác thư giãn
-187,đầy cảm hứng
-188,cảm giác sang trọng
-189,tuyệt vời
-190,hiệu quả
-191,thoáng
-192,không ngứa rát
-193,không khô căng
-194,không kích ứng
-195,ráo dầu
-196,kiềm dầu
-197,không đổ dầu
-198,mỏng nhẹ
-199,không mùi
-200,không châm chích
-201,không châm chít
-202,giảm mụn
-203,giảm thâm
-204,khô ráo
-205,dễ tán
-206,thấm nhanh
-207,ưng ý
+48,chuyên nghiệp
+49,đáng tin cậy
+50,an toàn
+51,lành tính
+52,thân thiện
+53,mềm mại
+54,sảng khoái
+55,thư giãn
+56,căng bóng
+57,rạng rỡ
+58,tươi trẻ
+59,trẻ trung
+60,sáng khỏe
+61,min mặc
+62,không tì vết
+63,tỏa sáng
+64,tự tin
+65,hạnh phúc
+66,thơm ngát
+67,hấp dẫn
+68,dịu nhẹ
+69,thoang thoảng
+70,tươi mát
+71,mát lạnh
+72,ấm áp
+73,mềm mịn
+74,mượt mà
+75,dễ chịu
+76,thoáng mát
+77,không nhờn rít
+78,nhẹ nhàng
+79,tơi xốp
+80,đầy đặn
+81,bổ dưỡng
+82,ẩm
+83,tươi sáng
+84,rực rỡ
+85,tráng lệ
+86,thanh lịch
+87,tự nhiên
+88,nổi bật
+89,quyến rũ
+90,sang trọng
+91,hiện đại
+92,độc đáo
+93,tinh tế
+94,bền đẹp
+95,tiện lợi
+96,sạch
+97,sạch mụn
+98,mịn màng
+99,rẻ
+100,hợp lý
+101,tiết kiệm
+102,đáng giá
+103,giá trị cao
+104,phải chăng
+105,ưu đãi
+106,cạnh tranh
+107,khuyến mãi tốt
+108,đặc trị
+109,chuyên sâu
+110,toàn diện
+111,đa năng
+112,hiệu quả cao
+113,tối ưu hóa
+114,phục hồi
+115,chống lão hóa
+116,làm dịu
+117,cấp nước
+118,dưỡng ẩm tốt
+119,làm sáng da
+120,bảo vệ da
+121,tái tạo da
+122,se khít lỗ chân lông
+123,làm sạch sâu
+124,ngăn ngừa mụn
+125,giữ màu lâu
+126,hồi sinh da
+127,nhỏ gọn
+128,tiện dụng
+129,dễ mang theo
+130,gọn nhẹ
+131,không chiếm diện tích
+132,thích hợp khi du lịch
+133,dễ bảo quản
+134,đóng gói tốt
+135,phù hợp với mọi hoàn cảnh
+136,về trải nghiệm tổng thể:
+137,sang chảnh
+138,đáng yêu
+139,thoải mái
+140,lịch sự
+141,đẳng cấp
+142,hài hòa
+143,vượt mong đợi
+144,trọn vẹn
+145,hòa quyện
+146,cảm giác dễ chịu
+147,lôi cuốn
+148,cảm giác thư giãn
+149,đầy cảm hứng
+150,cảm giác sang trọng
+151,tuyệt vời
+152,hiệu quả
+153,thoáng
+154,không ngứa rát
+155,không khô căng
+156,không kích ứng
+157,ráo dầu
+158,kiềm dầu
+159,không đổ dầu
+160,mỏng nhẹ
+161,không mùi
+162,không châm chích
+163,không châm chít
+164,giảm mụn
+165,giảm thâm
+166,khô ráo
+167,dễ tán
+168,thấm nhanh
+169,ưng ý

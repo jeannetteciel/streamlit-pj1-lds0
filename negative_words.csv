@@ -1,188 +1,161 @@
 ,negative_words
-0,kém
 1,tệ
 2,buồn
-3,chán
-4,không dễ chịu
-5,không chất lượng
-6,không thích
-7,không ổn
-8,không hợp
-9,không đáng tin cậy
-10,không chuyên nghiệp
-11,không phản hồi
-12,không an toàn
-13,không phù hợp
-14,không thân thiện
-15,không linh hoạt
-16,không đáng giá
-17,không ấn tượng
-18,không tốt
-19,chậm
-20,khó khăn
-21,phức tạp
-22,khó chịu
-23,gây khó dễ
-24,rườm rà
-25,thất bại
-26,tồi tệ
-27,khó xử
-28,không thể chấp nhận
-29,tồi tệ
-30,không rõ ràng
-31,không chắc chắn
-32,rối rắm
-33,không tiện lợi
-34,không đáng tiền
+3,không chất lượng
+4,không thích
+5,không hợp
+6,không chuyên nghiệp
+7,không phản hồi
+8,không phù hợp
+9,không thân thiện
+10,không linh hoạt
+11,không đáng giá
+12,không ấn tượng
+13,khó khăn
+14,phức tạp
+15,gây khó dễ
+16,rườm rà
+17,khó xử
+18,không thể chấp nhận
+19,tồi tệ
+20,không rõ ràng
+21,không chắc chắn
+22,rối rắm
+23,không tiện lợi
+24,không đáng tiền
+25,quá tệ
+26,rất tệ
+27,chán
+28,tệ hại
+29,không ưng ý
+30,xấu
+31,dở
+32,không tốt
+33,không ổn
+34,thất vọng
 35,không hài lòng
-36,không đáng
-37,quá tệ
-38,rất tệ
-39,thất vọng
-40,chán
-41,tệ hại
-42,kinh khủng
-43,không ưng ý
-44,tệ
-45,kém
-46,xấu
-47,dở
-48,không tốt
-49,không ổn
-50,thất vọng
-51,chán
-52,không hài lòng
-53,không hiệu quả
-54,vô dụng
-55,thất bại
-56,tồi tệ
-57,kinh khủng
-58,không đáng
-59,không uy tín
-60,không quay lại
-61,không hiệu quả
-62,yếu
-63,kém
-64,chậm
-65,không rõ rệt
-66,không bền
-67,nhanh hỏng
-68,không ổn định
-69,không đáng tin cậy
-70,không an toàn
-71,gây hại
-72,kích ứng
-73,mẫn cảm
-74,khô
-75,nứt nẻ
-76,mẩn đỏ
-77,ngứa
-78,rít
-79,bết dính
+36,vô dụng
+37,thất bại
+38,kinh khủng
+39,không đáng
+40,không uy tín
+41,không quay lại
+42,không hiệu quả
+43,yếu
+44,kém
+45,chậm
+46,không rõ rệt
+47,không bền
+48,nhanh hỏng
+49,không ổn định
+50,không đáng tin cậy
+51,không an toàn
+52,gây hại
+53,kích ứng
+54,mẫn cảm
+55,khô
+56,nứt nẻ
+57,mẩn đỏ
+58,ngứa
+59,rít
+60,bết dính
+61,mờ nhạt
+62,không tươi trẻ
+63,lão hóa
+64,tổn thương
+65,hôi
+66,khó chịu
+67,nồng
+68,gắt
+69,không dễ chịu
+70,nhạt nhòa
+71,đặc quánh
+72,dính
+73,bết
+74,khô cứng
+75,không đều
+76,lỗn nhỗn
+77,không mịn màng
+78,không dễ tán
+79,xỉn màu
 80,không đều màu
-81,xỉn màu
-82,mờ nhạt
-83,không mịn màng
-84,không tươi trẻ
-85,lão hóa
-86,tổn thương
-87,không tự nhiên
-88,hôi
-89,khó chịu
-90,nồng
-91,gắt
-92,không dễ chịu
-93,nhạt nhòa
-94,không tự nhiên
-95,đặc quánh
-96,dính
-97,bết
-98,khô cứng
-99,không đều
-100,lỗn nhỗn
-101,không mịn màng
-102,không dễ tán
-103,xỉn màu
-104,không đều màu
-105,nhợt nhạt
-106,già
-107,không tự nhiên
-108,xấu xí
-109,lỗi thời
-110,kém chất lượng
-111,không tiện dụng
-112,khó sử dụng
-113,tắc lỗ chân lông
-114,bí
-115,vón cục
-116,kém chất lượng
-117,lỗi thời
-118,dễ hỏng
-119,thiếu kiểm định
-120,không đồng nhất
-121,gây thất vọng
-122,kém bền
-123,quá hạn
-124,không đạt tiêu chuẩn
-125,không rõ nguồn gốc
-126,thiếu tin cậy
-127,cảm giác:
-128,gây khó chịu
-129,nặng nề
-130,bí bách
-131,khó thở
-132,bết rít
-133,khó chịu trên da
-134,nổi mụn
-135,nóng rát
-136,châm chích
-137,cảm giác nhờn dính
-138,nặng mặt
-139,dính bẩn
-140,công dụng:
-141,không có tác dụng
-142,hiệu quả thấp
-143,kém cải thiện
-144,không như quảng cáo
-145,gây kích ứng
-146,làm da khô hơn
-147,gây nhờn rít
-148,không trị mụn như mong đợi
-149,làm da xỉn màu
-150,không phù hợp loại da
-151,trải nghiệm:
-152,đóng gói kém
-153,mùi khó chịu
-154,vỡ hỏng khi sử dụng
-155,quá phức tạp
-156,không đáng thời gian
-157,tốn công sức
-158,dễ tràn
-159,không thể tái sử dụng
-160,gây lãng phí
-161,quá đắt
-162,không xứng đáng với giá tiền
-163,lừa đảo
-164,không hỗ trợ khách hàng
-165,không đáng đầu tư
-166,bán hàng kém chất lượng
-167,dịch vụ tệ
-168,không có bảo hành
-169,phí
-170,sắc
-171,xước
-172,lích kích
-173,nhờn rít
-174,khó lấy
-175,đổ dầu
-176,không đánh giá cao
-177,lên mụn
-178,không sạch
-179,kiềm dầu kém
-180,không đề xuất
-181,không thẩm thấu
-182,không cải thiện
-183,nhờn
-184,vô thưởng
-185,vô phạt
-186,dưỡng ẩm kém
+81,nhợt nhạt
+82,già
+83,không tự nhiên
+84,xấu xí
+85,không tiện dụng
+86,khó sử dụng
+87,tắc lỗ chân lông
+88,bí
+89,vón cục
+90,kém chất lượng
+91,lỗi thời
+92,dễ hỏng
+93,thiếu kiểm định
+94,không đồng nhất
+95,gây thất vọng
+96,kém bền
+97,quá hạn
+98,không đạt tiêu chuẩn
+99,không rõ nguồn gốc
+100,thiếu tin cậy
+101,cảm giác:
+102,gây khó chịu
+103,nặng nề
+104,bí bách
+105,khó thở
+106,bết rít
+107,khó chịu trên da
+108,nổi mụn
+109,nóng rát
+110,châm chích
+111,cảm giác nhờn dính
+112,nặng mặt
+113,dính bẩn
+114,công dụng:
+115,không có tác dụng
+116,hiệu quả thấp
+117,kém cải thiện
+118,không như quảng cáo
+119,gây kích ứng
+120,làm da khô hơn
+121,gây nhờn rít
+122,không trị mụn như mong đợi
+123,làm da xỉn màu
+124,không phù hợp loại da
+125,trải nghiệm:
+126,đóng gói kém
+127,mùi khó chịu
+128,vỡ hỏng khi sử dụng
+129,quá phức tạp
+130,không đáng thời gian
+131,tốn công sức
+132,dễ tràn
+133,không thể tái sử dụng
+134,gây lãng phí
+135,quá đắt
+136,không xứng đáng với giá tiền
+137,lừa đảo
+138,không hỗ trợ khách hàng
+139,không đáng đầu tư
+140,bán hàng kém chất lượng
+141,dịch vụ tệ
+142,không có bảo hành
+143,phí
+144,sắc
+145,xước
+146,lích kích
+147,nhờn rít
+148,khó lấy
+149,đổ dầu
+150,không đánh giá cao
+151,lên mụn
+152,không sạch
+153,kiềm dầu kém
+154,không đề xuất
+155,không thẩm thấu
+156,không cải thiện
+157,nhờn
+158,vô thưởng
+159,vô phạt
+160,dưỡng ẩm kém
