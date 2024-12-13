@@ -83,9 +83,14 @@ for line in f:
 f.close()
 
 list_of_words = ['và', 'một', 'của', 'có', 'đó', 'rất', 'nào', 'được',
-                'khi', 'thể', 'sự', 'tính', 'trong','cũng','cùng','cho','hay','chỉ']
+                'khi', 'thể', 'sự', 'tính', 'trong','cũng','cùng','cho','hay','chỉ', 'hasaki', 'cực', 'ghế']
 for word in list_of_words:
     stopwords.add(word)
+
+product_stop_words_file = pd.read_csv('product_stop_words.csv')
+product_stop_words = product_stop_words_file['words'].to_list()
+for word in product_stop_words:
+   stopwords.add(word)
 
 pos = pd.read_csv('positive_words.csv')
 positive_words = pos['positive_words'].to_list()
@@ -118,9 +123,9 @@ def cmt_extract (df, comment_column):
       comment = row[comment_column]
       tokens = process_comment(comment)
       all_words.extend(tokens)
-      if row['rating_group'] == 'positive' and any(token in positive_words for token in tokens):
+      if row['rating_group'] == 'positive' and any(token for token in tokens):
           positive_list.extend(tokens)
-      elif row['rating_group'] == 'negative' and any(token in negative_words for token in tokens):
+      elif row['rating_group'] == 'negative' and any(token for token in tokens):
           negative_list.extend(tokens)
   return all_words, positive_list, negative_list
 
@@ -184,92 +189,92 @@ elif choice == 'Product Analysis':
   unique_products = st.session_state.random_products[['ten_san_pham', 'ma_san_pham']].drop_duplicates(subset=['ten_san_pham'])
   # Tạo một tuple cho mỗi sản phẩm, trong đó phần tử đầu là tên và phần tử thứ hai là ID
   product_options = [(row['ten_san_pham'], row['ma_san_pham']) for index, row in unique_products.iterrows()]
-  st.session_state.random_products
+  # st.session_state.random_products
   # Tạo một dropdown với options là các tuple này
   selected_product = st.selectbox(
     "Chọn sản phẩm",
     options=product_options,
+    index = None,
+    placeholder = "Choose an option",
+    label_visibility="visible",
     format_func=lambda x: x[0]  # Hiển thị tên sản phẩm
   )
-  # Display the selected product
-  st.write("Bạn đã chọn:", selected_product)
-  # Cập nhật session_state dựa trên lựa chọn hiện tại
-  st.session_state.selected_ma_san_pham = selected_product[1]
-  product_code = st.session_state.selected_ma_san_pham
-  # Lọc dữ liệu cho sản phẩm có mã tương ứng
-  product_data = df[df['ma_san_pham'] == product_code]
+  if selected_product:
+    # Display the selected product
+    st.write("Bạn đã chọn:", selected_product[0])
+    # Cập nhật session_state dựa trên lựa chọn hiện tại
+    st.session_state.selected_ma_san_pham = selected_product[1]
+    product_code = st.session_state.selected_ma_san_pham
+    # Lọc dữ liệu cho sản phẩm có mã tương ứng
+    product_data = df[df['ma_san_pham'] == product_code]
 
-  all_words, positive_list, negative_list = cmt_extract(product_data, 'processed_cmt')
+    st.write(product_data[['ma_san_pham', 'ten_san_pham', 'diem_trung_binh', 'gia_ban', 'gia_goc', 'phan_loai'
+                           , 'ma_khach_hang', 'noi_dung_binh_luan', 'ngay_binh_luan', 'so_sao', 'rating_group']].rename(columns = {'ma_san_pham':'Mã sản phẩm', 'ten_san_pham':'Tên sản phẩm'
+                                            ,'diem_trung_binh':'Điểm trung bình', 'gia_ban':'Giá bán'
+                                            , 'gia_goc':'Giá gốc', 'phan_loai':'Phân loại'
+                           , 'ma_khach_hang':'Mã khách hàng', 'noi_dung_binh_luan':'Nội dung bình luận'
+                           , 'ngay_binh_luan':'Ngày bình luận', 'so_sao':'Rating', 'rating_group':'Phân loại đánh giá'}))
+    
+    all_words, positive_list, negative_list = cmt_extract(product_data, 'processed_cmt')
 
-  # Số lượt đánh giá
-  num_reviews = len(product_data)
+    # Số lượt đánh giá
+    num_reviews = len(product_data)
 
-  # Điểm trung bình
-  average_rating = product_data['so_sao'].median()
+    # Số lượng đánh giá của mỗi loại (tích cực - tiêu cực - trung bình)
+    positive_reviews = len(product_data[product_data['rating_group'] == 'positive'])
+    negative_reviews = len(product_data[product_data['rating_group'] == 'negative'])
 
-  # Số lượng đánh giá của mỗi loại (tích cực - tiêu cực - trung bình)
-  positive_reviews = len(product_data[product_data['rating_group'] == 'positive'])
-  negative_reviews = len(product_data[product_data['rating_group'] == 'negative'])
+    # Các từ thường gặp trong comment
+    freq_dist = FreqDist(all_words)
+    freq_dist_positive = FreqDist(positive_list)
+    freq_dist_negative = FreqDist(negative_list)
 
-  # Các từ thường gặp trong comment
-  freq_dist = FreqDist(all_words)
-  freq_dist_positive = FreqDist(positive_list)
-  freq_dist_negative = FreqDist(negative_list)
+    # Các từ thường xuất hiện phần đánh giá tích cực và tiêu cực
+    common_positive_words = freq_dist_positive.most_common(10)
+    common_negative_words = freq_dist_negative.most_common(10)
 
-  # Các từ thường xuất hiện phần đánh giá tích cực và tiêu cực
-  common_positive_words = freq_dist_positive.most_common(10)
-  common_negative_words = freq_dist_negative.most_common(10)
+    positive_comment_words =' '.join(positive_list)
+    negative_comment_words =' '.join(negative_list)
 
-  positive_comment_words =' '.join(positive_list)
-  negative_comment_words =' '.join(negative_list)
+    cmt = product_data[['noi_dung_binh_luan', 'rating_group']]
+    if st.session_state.selected_ma_san_pham:
+      st.write("ma_san_pham: ", st.session_state.selected_ma_san_pham)
+      # Hiển thị thông tin sản phẩm được chọn
+      selected_product = df[df['ma_san_pham'] == st.session_state.selected_ma_san_pham]
 
-  cmt = product_data[['noi_dung_binh_luan', 'rating_group']]
-  if st.session_state.selected_ma_san_pham:
-    st.write("ma_san_pham: ", st.session_state.selected_ma_san_pham)
-    # Hiển thị thông tin sản phẩm được chọn
-    selected_product = df[df['ma_san_pham'] == st.session_state.selected_ma_san_pham]
+      if not selected_product.empty:
+        st.write('## Đánh giá sản phẩm')
+        st.write('### ', selected_product['ten_san_pham'].values[0])
+        st.write('Số lượt đánh giá:', num_reviews)
+        st.write('Điểm trung bình:', selected_product['diem_trung_binh'].values[0])
+        st.write('Số lượng đánh giá tích cực:', positive_reviews)
+        st.write('Số lượng đánh giá tiêu cực:', negative_reviews)
 
-    if not selected_product.empty:
-      st.write('## Đánh giá sản phẩm')
-      st.write('### ', selected_product['ten_san_pham'].values[0])
-      st.write('Số lượt đánh giá:', num_reviews)
-      st.write('Điểm trung bình:', average_rating)
-      st.write('Số lượng đánh giá tích cực:', positive_reviews)
-      st.write('Số lượng đánh giá tiêu cực:', negative_reviews)
+        st.write('#### Từ thường xuất hiện ở đánh giá tích cực: ')
+        if len(positive_comment_words) > 0:
+          # Vẽ wordclouds
+          wc_like=WordCloud(background_color='white', max_words=100, stopwords=stopwords)
+          wc_like.generate(positive_comment_words)
+          plt.figure(figsize=(10, 12))
+          plt.imshow(wc_like, interpolation='bilinear')
+          plt.axis('off')
+          plt.show()
+          st.pyplot(plt)
+        else:
+          st.write('Không có bình luận tích cực')
 
-      st.write('#### Từ thường xuất hiện ở đánh giá tích cực: ')
-      # Vẽ wordclouds
-      wc_like=WordCloud(background_color='white', max_words=1000, stopwords=stopwords)
-      wc_like.generate(positive_comment_words)
-      plt.figure(figsize=(10, 12))
-      plt.imshow(wc_like, interpolation='bilinear')
-      plt.axis('off')
-      plt.show()
-      st.pyplot(plt)
+        st.write('#### Từ thường xuất hiện ở đánh giá tiêu cực: ')
+        if len(negative_comment_words) >0:
+          # Vẽ wordclouds
+          wc_like=WordCloud(background_color='white', max_words=100, stopwords=stopwords)
+          wc_like.generate(negative_comment_words)
+          plt.figure(figsize=(10, 12))
+          plt.imshow(wc_like, interpolation='bilinear')
+          plt.axis('off')
+          plt.show()
+          st.pyplot(plt)
+        else:
+          st.write('Không có bình luận tiêu cực')
+      else:
+        st.write(f"Không tìm thấy sản phẩm với ID: {st.session_state.selected_ma_san_pham}")
 
-      st.write('#### Từ thường xuất hiện ở đánh giá tiêu cực: ')
-      # Vẽ wordclouds
-      wc_like=WordCloud(background_color='white', max_words=1000, stopwords=stopwords)
-      wc_like.generate(negative_comment_words)
-      plt.figure(figsize=(10, 12))
-      plt.imshow(wc_like, interpolation='bilinear')
-      plt.axis('off')
-      plt.show()
-      st.pyplot(plt)
-    else:
-      st.write(f"Không tìm thấy sản phẩm với ID: {st.session_state.selected_ma_san_pham}")
-
-#from pyngrok import ngrok
-
-#ngrok.set_auth_token('2psCD4VnJm8nJhtP8JlNYTSXz6r_4PQRHWsfbfpt7BNpXeiv8')
-
-# # Start Streamlit server on a specific port
-# !nohup streamlit run app.py --server.port 8501 &
-
-# # Start ngrok tunnel to expose the Streamlit server
-# ngrok_tunnel = ngrok.connect(addr='8501', proto='http', bind_tls=True)
-
-# # print the URL of the ngrok tunnel
-# print(' * Tunnel URL:', ngrok_tunnel.public_url)
-
-# ngrok.kill()

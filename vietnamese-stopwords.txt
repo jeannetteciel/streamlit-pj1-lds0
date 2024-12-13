@@ -326,6 +326,7 @@ cái_họ
 cái_đã
 cái_đó
 cái_ấy
+cái_là
 câu_hỏi
 cây
 cây_nước
@@ -432,6 +433,8 @@ cứ_như
 cứ_việc
 cứ_điểm
 cực_lực
+cực
+cực_kỳ
 do
 do_vì
 do_vậy
@@ -543,6 +546,7 @@ hay_nói
 hay_sao
 hay_tin
 hay_đâu
+hẳn
 hiểu
 hiện_nay
 hiện_tại
@@ -640,6 +644,7 @@ kể_cả
 kể_như
 kể_tới
 kể_từ
+lắm
 liên_quan
 loại
 loại_từ
@@ -1674,6 +1679,7 @@ xa_tanh
 xa_tắp
 xa_xa
 xa_xả
+xài
 xem
 xem_lại
 xem_ra
@@ -1945,7 +1951,21 @@ thông_báo
 quản_lý
 phụ_nữ
 bản_xứ
+sài
 sài_gòn
 sàigòn
 khu_vực
 lễ_tân
+coan
+kcn
+srm
+bôi
+thoa
+vỗ
+xịt
+apply
+aply
+tán
+tầm
+ghế
+
